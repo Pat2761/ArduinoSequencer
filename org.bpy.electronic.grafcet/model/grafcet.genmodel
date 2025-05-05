@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.bpy.electronic.grafcet/src" modelPluginID="org.bpy.electronic.grafcet"
+    modelName="Grafcet" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>grafcet.ecore</foreignModel>
+  <genPackages prefix="Grafcet" basePackage="org.bpy.electronic" disposableProviderFactory="true"
+      generateModelWizard="false" ecorePackage="grafcet.ecore#/">
+    <genClasses ecoreClass="grafcet.ecore#//Model">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference grafcet.ecore#//Model/grafcetEntry"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference grafcet.ecore#//Model/grafcetEnded"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference grafcet.ecore#//Model/grafcets"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grafcet.ecore#//Model/sequencerPath"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grafcet.ecore#//Model/projectName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grafcet.ecore#//Model/description"/>
+    </genClasses>
+    <genClasses ecoreClass="grafcet.ecore#//Grafcet">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference grafcet.ecore#//Grafcet/entryPoint"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grafcet.ecore#//Grafcet/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference grafcet.ecore#//Grafcet/next"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grafcet.ecore#//Grafcet/autorun"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference grafcet.ecore#//Grafcet/end"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference grafcet.ecore#//Grafcet/steps"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grafcet.ecore#//Grafcet/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference grafcet.ecore#//Grafcet/reports"/>
+    </genClasses>
+    <genClasses ecoreClass="grafcet.ecore#//GrafcetEntryPoint">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference grafcet.ecore#//GrafcetEntryPoint/step"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grafcet.ecore#//GrafcetEntryPoint/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference grafcet.ecore#//GrafcetEntryPoint/report"/>
+      <genOperations ecoreOperation="grafcet.ecore#//GrafcetEntryPoint/newOperation1"/>
+    </genClasses>
+    <genClasses ecoreClass="grafcet.ecore#//TransitionAction">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grafcet.ecore#//TransitionAction/transitionFct"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grafcet.ecore#//TransitionAction/actionFct"/>
+    </genClasses>
+    <genClasses ecoreClass="grafcet.ecore#//GrafcetStep">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grafcet.ecore#//GrafcetStep/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grafcet.ecore#//GrafcetStep/comment"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grafcet.ecore#//GrafcetStep/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grafcet.ecore#//GrafcetStep/startingGraphicalPoint"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference grafcet.ecore#//GrafcetStep/entryConnector"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference grafcet.ecore#//GrafcetStep/grafcetElements"/>
+    </genClasses>
+    <genClasses ecoreClass="grafcet.ecore#//GrafcetEntry">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference grafcet.ecore#//GrafcetEntry/startingGrafcet"/>
+    </genClasses>
+    <genClasses ecoreClass="grafcet.ecore#//GrafcetEnded"/>
+    <genClasses image="false" ecoreClass="grafcet.ecore#//GrafcetElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grafcet.ecore#//GrafcetElement/comment"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference grafcet.ecore#//GrafcetElement/nextStep"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grafcet.ecore#//GrafcetElement/location"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference grafcet.ecore#//GrafcetElement/nextReportStep"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grafcet.ecore#//GrafcetElement/uuid"/>
+    </genClasses>
+    <genClasses ecoreClass="grafcet.ecore#//Action">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grafcet.ecore#//Action/actionFct"/>
+    </genClasses>
+    <genClasses ecoreClass="grafcet.ecore#//Transition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grafcet.ecore#//Transition/transitionFct"/>
+    </genClasses>
+    <genClasses ecoreClass="grafcet.ecore#//PassThrough">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grafcet.ecore#//PassThrough/transitionFct"/>
+    </genClasses>
+    <genClasses ecoreClass="grafcet.ecore#//Report">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grafcet.ecore#//Report/label"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference grafcet.ecore#//Report/nextStep"/>
+    </genClasses>
+    <genClasses ecoreClass="grafcet.ecore#//GrafcetConnector">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grafcet.ecore#//GrafcetConnector/name"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference grafcet.ecore#//GrafcetConnector/grafcetElements"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated grafcet -->
+      <editor
+            id="org.bpy.electronic.ArduinoGrafcet.presentation.GrafcetEditorID"
+            name="%_UI_GrafcetEditor_label"
+            icon="icons/full/obj16/GrafcetModelFile.gif"
+            extensions="grafcet"
+            class="org.bpy.electronic.ArduinoGrafcet.presentation.GrafcetEditor"
+            contributorClass="org.bpy.electronic.ArduinoGrafcet.presentation.GrafcetActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

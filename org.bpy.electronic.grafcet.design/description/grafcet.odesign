@@ -1,0 +1,731 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:validation="http://www.eclipse.org/sirius/description/validation/1.1.0" name="grafcet" version="12.0.0.2017041100">
+  <ownedViewpoints name="model_vp" label="Sequencer viewpoint" modelFileExtension="grafcet">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="HighLevel" label="High level diagram" showOnStartup="true" domainClass="ArduinoGrafcet::Model" enablePopupBars="true">
+      <validationSet>
+        <ownedRules xsi:type="validation:SemanticValidationRule" name="missingStartElement" label="Missing start element" level="ERROR" message="Missing start element" targetClass="ArduinoGrafcet::Model">
+          <audits auditExpression="aql:self.checkMissingStartElement()"/>
+        </ownedRules>
+        <ownedRules xsi:type="validation:SemanticValidationRule" name="missindEndElement" label="Missing end element" level="ERROR" message="Missing end element" targetClass="ArduinoGrafcet::Model">
+          <audits auditExpression="aql:self.checkMissingEndElement()"/>
+        </ownedRules>
+        <ownedRules xsi:type="validation:SemanticValidationRule" name="grafcetEndedConnection" label="Grafcet Ended Connection" level="ERROR" message="Ended element must be connected to a graph." targetClass="ArduinoGrafcet::GrafcetEnded">
+          <audits auditExpression="aql:self.checkUncallEndedElement()"/>
+        </ownedRules>
+        <ownedRules xsi:type="validation:SemanticValidationRule" name="checkCIdentifier" label="check C Identifier" level="ERROR" message="aql:'Identifier \'' + self.name + '\' must be a valid identifier'" targetClass="ArduinoGrafcet::Grafcet">
+          <audits auditExpression="aql:self.checkGraphName()"/>
+        </ownedRules>
+      </validationSet>
+      <defaultLayer name="Default">
+        <nodeMappings name="mainEntry" label="Entry" domainClass="ArduinoGrafcet::GrafcetEntry">
+          <style xsi:type="style:EllipseNodeDescription" labelSize="12" labelExpression="['Begin'/]" iconPath="/org.bpy.electronic.grafcet.design/icons/EnterIcon.jpg" sizeComputationExpression="1" labelPosition="node" resizeKind="NSEW" horizontalDiameterComputationExpression="30" verticalDiameterComputationExpression="5">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Grafcet" navigationDescriptions="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='HighLevel']/@defaultLayer/@toolSections.3/@ownedTools[name='openGrafcetDescription']" doubleClickDescription="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='HighLevel']/@defaultLayer/@toolSections.3/@ownedTools[name='editGrafcetAttribute']" domainClass="ArduinoGrafcet::Grafcet">
+          <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" iconPath="/org.bpy.electronic.grafcet.design/icons/grafcet.jpg" tooltipExpression="aql:self.description" labelPosition="node" resizeKind="NSEW" width="30" height="5">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="mainEnded" label="Ended" domainClass="ArduinoGrafcet::GrafcetEnded">
+          <style xsi:type="style:EllipseNodeDescription" labelSize="12" labelExpression="['End'/]" iconPath="/org.bpy.electronic.grafcet.design/icons/ExitIcon.jpg" labelPosition="node" resizeKind="NSEW" horizontalDiameterComputationExpression="30" verticalDiameterComputationExpression="5">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="rootNode" label="Root node" semanticCandidatesExpression="aql:self" doubleClickDescription="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='HighLevel']/@defaultLayer/@toolSections.3/@ownedTools[name='editModelAttribute']" domainClass="ArduinoGrafcet::Model">
+          <style xsi:type="style:NoteDescription" labelSize="12" showIcon="false" labelExpression="feature:projectName" tooltipExpression="aql:self.description" sizeComputationExpression="25" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='yellow']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="EntryRelation" label="Entry relation" deletionDescription="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='HighLevel']/@defaultLayer/@toolSections.2/@ownedTools[name='deleteEdge']" sourceMapping="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='HighLevel']/@defaultLayer/@nodeMappings[name='mainEntry']" targetMapping="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='HighLevel']/@defaultLayer/@nodeMappings[name='Grafcet']" targetFinderExpression="[startingGrafcet/]" reconnections="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='HighLevel']/@defaultLayer/@toolSections.2/@ownedTools[name='reconnectTargetEdge']">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="graphRelation" label="Graph relation" deletionDescription="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='HighLevel']/@defaultLayer/@toolSections.2/@ownedTools[name='deleteEdge']" sourceMapping="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='HighLevel']/@defaultLayer/@nodeMappings[name='Grafcet']" targetMapping="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='HighLevel']/@defaultLayer/@nodeMappings[name='Grafcet'] //@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='HighLevel']/@defaultLayer/@nodeMappings[name='mainEnded']" targetFinderExpression="[next/]" reconnections="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='HighLevel']/@defaultLayer/@toolSections.2/@ownedTools[name='reconnectTargetEdge'] //@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='HighLevel']/@defaultLayer/@toolSections.2/@ownedTools[name='reconnectSourceEdge']">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="endRelation" label="End relation" deletionDescription="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='HighLevel']/@defaultLayer/@toolSections.2/@ownedTools[name='deleteEdge']" sourceMapping="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='HighLevel']/@defaultLayer/@nodeMappings[name='Grafcet']" targetMapping="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='HighLevel']/@defaultLayer/@nodeMappings[name='mainEnded']" targetFinderExpression="[end/]" reconnections="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='HighLevel']/@defaultLayer/@toolSections.2/@ownedTools[name='reconnectTargetEdge'] //@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='HighLevel']/@defaultLayer/@toolSections.2/@ownedTools[name='reconnectSourceEdge']">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <toolSections name="menu" label="Menu">
+          <ownedTools xsi:type="tool:GroupMenu" name="userModelGroupMenu" label="Root Group popup menu" locationURI="menu:root">
+            <itemDescriptions xsi:type="tool:OperationAction" name="editParameters" label="Edit parameters" precondition="aql:self.oclIsTypeOf(ArduinoGrafcet::Grafcet)">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:self.openGrafcetAttrirbuteEditor()"/>
+                </firstModelOperations>
+              </initialOperation>
+            </itemDescriptions>
+            <itemDescriptions xsi:type="tool:OperationAction" name="commuteActifMenu" label="Commute grafcet state" precondition="aql:self.oclIsTypeOf(ArduinoGrafcet::Grafcet)" forceRefresh="true">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:SetValue" featureName="autorun" valueExpression="aql:not self.eGet('autorun')"/>
+                <firstModelOperations xsi:type="" featureName="isActif" valueExpression=" "/>
+              </initialOperation>
+            </itemDescriptions>
+            <itemDescriptions xsi:type="tool:OperationAction" name="editGeneralInformation" label="Edit General Information" precondition="aql:self.oclIsTypeOf(ArduinoGrafcet::Model)">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:self.fillModelParameters()"/>
+              </initialOperation>
+            </itemDescriptions>
+            <itemDescriptions xsi:type="tool:OperationAction" name="openOrCreateGrafcetEditor" label="Open grafcet editor" precondition="aql:self.oclIsTypeOf(ArduinoGrafcet::Grafcet)" elementsToSelect="var:self">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:SetValue" featureName="entryPoint" valueExpression="aql:self.openOrCreateGrafcetDiagram()"/>
+              </initialOperation>
+            </itemDescriptions>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="paletteObjects" label="Elements">
+          <ownedTools xsi:type="tool_1:NodeCreationDescription" name="entryElement" label="Entry " precondition="aql:self.checkEntryExistence()" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='HighLevel']/@defaultLayer/@nodeMappings[name='mainEntry']" iconPath="/org.bpy.electronic.grafcet.design/icons/EnterIcon.jpg">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool:CreateInstance" typeName="ArduinoGrafcet::GrafcetEntry" referenceName="grafcetEntry"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:NodeCreationDescription" name="createSequencer" label="Create Sequencer" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='HighLevel']/@defaultLayer/@nodeMappings[name='Grafcet']" iconPath="/org.bpy.electronic.grafcet.design/icons/grafcet.jpg">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool:CreateInstance" typeName="ArduinoGrafcet::Grafcet" referenceName="grafcets">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="ToBeDefined"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:NodeCreationDescription" name="endElement" label="End element" nodeMappings="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='HighLevel']/@defaultLayer/@nodeMappings[name='mainEnded']" iconPath="/org.bpy.electronic.grafcet.design/icons/ExitIcon.jpg">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool:CreateInstance" typeName="ArduinoGrafcet::GrafcetEnded" referenceName="grafcetEnded"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="paletteLinks" label="Connector">
+          <ownedTools xsi:type="tool_1:EdgeCreationDescription" name="linkCreation" label="Link" forceRefresh="true" edgeMappings="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='HighLevel']/@defaultLayer/@edgeMappings[name='EntryRelation'] //@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='HighLevel']/@defaultLayer/@edgeMappings[name='graphRelation']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="[source/]">
+                <subModelOperations xsi:type="tool:If" conditionExpression="aql:source.oclIsTypeOf(ArduinoGrafcet::Grafcet) and target.oclIsTypeOf(ArduinoGrafcet::Grafcet) and source.checkConnectionGrafcetToGrafcet(target)">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="next" valueExpression="[target/]"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool:If" conditionExpression="aql:source.oclIsTypeOf(ArduinoGrafcet::GrafcetEntry) and target.oclIsTypeOf(ArduinoGrafcet::Grafcet) and source.checkConnectionGrafcetEntryToGrafcet(target)">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="startingGrafcet" valueExpression="[target/]"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool:If" conditionExpression="aql:source.oclIsTypeOf(ArduinoGrafcet::Grafcet) and target.oclIsTypeOf(ArduinoGrafcet::GrafcetEnded) and source.checkConnectionGrafcetToEnd(target)">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="end" valueExpression="[target/]"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:DeleteElementDescription" name="deleteEdge" label="Delete edge">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext">
+                <subModelOperations xsi:type="tool:If" conditionExpression="aql:element.oclIsTypeOf(ArduinoGrafcet::GrafcetEntry)">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="startingGrafcet" valueExpression="aql:null"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool:If" conditionExpression="aql:element.oclIsTypeOf(ArduinoGrafcet::Grafcet) and element.next&lt;>null">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="next" valueExpression="aql:null"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool:If" conditionExpression="aql:element.oclIsTypeOf(ArduinoGrafcet::Grafcet) and element.end&lt;>null">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="end" valueExpression="aql:null"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:ReconnectEdgeDescription" name="reconnectTargetEdge" label="Reconnect Target Edge">
+            <source name="source"/>
+            <target name="target"/>
+            <sourceView name="sourceView"/>
+            <targetView name="targetView"/>
+            <element name="element"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="[element/]">
+                <subModelOperations xsi:type="tool:If" conditionExpression="aql:source.oclIsTypeOf(ArduinoGrafcet::Grafcet) and target.oclIsTypeOf(ArduinoGrafcet::Grafcet)">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="next" valueExpression="[target/]"/>
+                  <subModelOperations xsi:type="tool:SetValue" featureName="end" valueExpression="aql:null"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool:If" conditionExpression="aql:source.oclIsTypeOf(ArduinoGrafcet::Grafcet) and target.oclIsTypeOf(ArduinoGrafcet::GrafcetEnded)">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="end" valueExpression="[target/]"/>
+                  <subModelOperations xsi:type="tool:SetValue" featureName="next" valueExpression="aql:null"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool:If" conditionExpression="aql:source.oclIsTypeOf(ArduinoGrafcet::Grafcet) and element.oclIsTypeOf(ArduinoGrafcet::GrafcetEntry)">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="startingGrafcet" valueExpression="[target/]"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+            <edgeView name="edgeView"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:ReconnectEdgeDescription" name="reconnectSourceEdge" label="Reconnect Source Edge" reconnectionKind="RECONNECT_SOURCE">
+            <source name="source"/>
+            <target name="target"/>
+            <sourceView name="sourceView"/>
+            <targetView name="targetView"/>
+            <element name="element"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext">
+                <subModelOperations xsi:type="tool:ChangeContext" browseExpression="[target/]">
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:source.oclIsTypeOf(ArduinoGrafcet::Grafcet) and target.oclIsTypeOf(ArduinoGrafcet::Grafcet)">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="next" valueExpression="[source.next/]"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:source.oclIsTypeOf(ArduinoGrafcet::Grafcet) and source.end.oclIsTypeOf(ArduinoGrafcet::GrafcetEnded)">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="end" valueExpression="[source.end/]"/>
+                  </subModelOperations>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool:ChangeContext" browseExpression="[source/]">
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:source.oclIsTypeOf(ArduinoGrafcet::Grafcet) and source.next.oclIsTypeOf(ArduinoGrafcet::Grafcet)">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="next" valueExpression="aql:null"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:source.oclIsTypeOf(ArduinoGrafcet::Grafcet) and source.end.oclIsTypeOf(ArduinoGrafcet::GrafcetEnded)">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="end" valueExpression="aql:null"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+            <edgeView name="edgeView"/>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="Tools" label="Tools">
+          <ownedTools xsi:type="tool_1:DoubleClickDescription" name="editGrafcetAttribute" label="Edit Grafcet Attribute" mappings="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='HighLevel']/@defaultLayer/@nodeMappings[name='Grafcet']">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool:Let" valueExpression="aql:self.openGrafcetAttrirbuteEditor()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:DiagramNavigationDescription" name="openGrafcetDescription" label="Open Grafcet Description" forceRefresh="true" diagramDescription="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']">
+            <containerViewVariable name="containerView"/>
+            <containerVariable name="container"/>
+            <representationNameVariable name="diagramName"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:DoubleClickDescription" name="editModelAttribute" label="Edit Model Attribute" mappings="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='HighLevel']/@defaultLayer/@nodeMappings[name='rootNode']">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool:Let" valueExpression="aql:self.editModelAttributes()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <decorationDescriptionsSet>
+          <decorationDescriptions xsi:type="description_1:MappingBasedDecoration" name="grafphIsActif" position="NORTH_WEST" preconditionExpression="aql:self.autorun" imageExpression="org.bpy.electronic.grafcet.design\icons\led-rounded-h-red.jpg" tooltipExpression="This grafcet is active at initialization" mappings="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='HighLevel']/@defaultLayer/@nodeMappings[name='Grafcet']"/>
+          <decorationDescriptions xsi:type="description_1:MappingBasedDecoration" name="grafphIsInactif" position="NORTH_WEST" preconditionExpression="aql:not self.autorun" imageExpression="org.bpy.electronic.grafcet.design\icons\led-rounded-h-grey.jpg" tooltipExpression="This grafcet is inactive at initialization" mappings="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='HighLevel']/@defaultLayer/@nodeMappings[name='Grafcet']"/>
+        </decorationDescriptionsSet>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="grafcetDiagram" label="Grafcet Diagram" domainClass="ArduinoGrafcet::Grafcet" enablePopupBars="true">
+      <defaultLayer name="Default">
+        <nodeMappings name="entryGrafcetnode" label="Entry Grafcet Node" semanticCandidatesExpression="[entryPoint/]" domainClass="ArduinoGrafcet::GrafcetEntryPoint">
+          <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="Entry point" labelPosition="node" resizeKind="NSEW" width="30" height="5">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="reportElement" label="Report Element" semanticCandidatesExpression="[reports/]" doubleClickDescription="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@toolSections.2/@ownedTools[name='reportAttributeEditor']" domainClass="ArduinoGrafcet::Report">
+          <style xsi:type="style:EllipseNodeDescription" labelSize="12" showIcon="false" labelExpression="aql:self.nextStep.comment" sizeComputationExpression="" labelPosition="node" horizontalDiameterComputationExpression="25" verticalDiameterComputationExpression="5">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_purple']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="entryToStep" label="Entry to step" deletionDescription="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@toolSections.4/@ownedTools[name='entryToStep']" sourceMapping="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@nodeMappings[name='entryGrafcetnode']" targetMapping="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@containerMappings[name='stepContainer']" targetFinderExpression="[step/]">
+          <style targetArrow="InputFillClosedArrow" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="stepToTransitionAction" label="Step To Transition/Action" deletionDescription="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@toolSections.4/@ownedTools[name='deleteStepEntryToElements']" sourceMapping="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@containerMappings[name='stepContainer']/@subNodeMappings[name='stepInternalInput']" targetMapping="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@containerMappings[name='stepContainer']/@subNodeMappings[name='transitionAction']/@borderedNodeMappings[name='inputAnchor']" targetFinderExpression="aql:self.grafcetElements->filter(ArduinoGrafcet::GrafcetElement)">
+          <style sizeComputationExpression="2" foldingStyle="SOURCE">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+            <sourceNodeAnchor>outputAnchor</sourceNodeAnchor>
+            <targetNodeAnchor>inputAnchor</targetNodeAnchor>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="stepToAction" label="Step To Action" deletionDescription="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@toolSections.4/@ownedTools[name='deleteStepEntryToElements']" sourceMapping="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@containerMappings[name='stepContainer']/@subNodeMappings[name='stepInternalInput']" targetMapping="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@containerMappings[name='stepContainer']/@subNodeMappings[name='actionOnly']/@borderedNodeMappings[name='actionInputAnchor']" targetFinderExpression="[grafcetElements/]">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="stepToTransition" label="Step To Transition" deletionDescription="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@toolSections.4/@ownedTools[name='deleteStepEntryToElements']" sourceMapping="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@containerMappings[name='stepContainer']/@subNodeMappings[name='stepInternalInput']" targetMapping="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@containerMappings[name='stepContainer']/@subNodeMappings[name='transitionOnly']/@borderedNodeMappings[name='transitionInputAnchor']" targetFinderExpression="[grafcetElements/]">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="stepToPassThrough" label="Step To Pass Through" deletionDescription="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@toolSections.4/@ownedTools[name='deleteStepEntryToElements']" sourceMapping="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@containerMappings[name='stepContainer']/@subNodeMappings[name='stepInternalInput']" targetMapping="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@containerMappings[name='stepContainer']/@subNodeMappings[name='passThrough']/@borderedNodeMappings[name='passThroughInputAnchor']" targetFinderExpression="[grafcetElements/]">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="grafcetElementToStep" label="Grafcet Element To Step" deletionDescription="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@toolSections.4/@ownedTools[name='deleteEdge']" sourceMapping="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@containerMappings[name='stepContainer']/@subNodeMappings[name='transitionAction']/@borderedNodeMappings[name='outputAnchor'] //@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@containerMappings[name='stepContainer']/@subNodeMappings[name='transitionOnly']/@borderedNodeMappings[name='transitionOutputAnchor'] //@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@containerMappings[name='stepContainer']/@subNodeMappings[name='actionOnly']/@borderedNodeMappings[name='actionOutputAnchor'] //@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@containerMappings[name='stepContainer']/@subNodeMappings[name='passThrough']/@borderedNodeMappings[name='passThroughOutputAnchor']" targetMapping="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@containerMappings[name='stepContainer']" targetFinderExpression="[nextStep/]">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="elementToReport" label="Grafcet Element To Report" deletionDescription="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@toolSections.4/@ownedTools[name='deleteEdgeElementToReport']" sourceMapping="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@containerMappings[name='stepContainer']/@subNodeMappings[name='transitionOnly']/@borderedNodeMappings[name='transitionOutputAnchor'] //@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@containerMappings[name='stepContainer']/@subNodeMappings[name='transitionAction']/@borderedNodeMappings[name='outputAnchor'] //@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@containerMappings[name='stepContainer']/@subNodeMappings[name='actionOnly']/@borderedNodeMappings[name='actionOutputAnchor'] //@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@containerMappings[name='stepContainer']/@subNodeMappings[name='passThrough']/@borderedNodeMappings[name='passThroughOutputAnchor']" targetMapping="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@nodeMappings[name='reportElement']" targetFinderExpression="[nextReportStep/]">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="entryToReport" label="Entry To Report" deletionDescription="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@toolSections.4/@ownedTools[name='deleteEntryPointToReport']" sourceMapping="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@nodeMappings[name='entryGrafcetnode']" targetMapping="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@nodeMappings[name='reportElement']" targetFinderExpression="[report/]">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings name="stepContainer" label="Step" semanticCandidatesExpression="[steps/]" doubleClickDescription="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@toolSections.2/@ownedTools[name='stepDoubleClick']" domainClass="ArduinoGrafcet::GrafcetStep">
+          <subNodeMappings name="stepInternalInput" label="Step input" deletionDescription="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@toolSections.1/@ownedTools[name='deleteStepConnector']" semanticCandidatesExpression="[entryConnector/]" domainClass="ArduinoGrafcet::GrafcetConnector">
+            <style xsi:type="style:DotDescription" labelSize="12" sizeComputationExpression="2" labelPosition="node">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="transitionAction" label="Transition/Action" semanticCandidatesExpression="[grafcetElements/]" doubleClickDescription="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@toolSections.2/@ownedTools[name='transitionActionAttributeEditor']" domainClass="ArduinoGrafcet::TransitionAction">
+            <borderedNodeMappings name="inputAnchor" label="Transition/Action Input anchor" preconditionExpression="aql:true" semanticCandidatesExpression="var:self" domainClass="ArduinoGrafcet::TransitionAction">
+              <style xsi:type="style:SquareDescription" labelSize="10" showIcon="false" labelExpression="" sizeComputationExpression="" labelPosition="node" width="1" height="1">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <forbiddenSides>WEST</forbiddenSides>
+                <forbiddenSides>SOUTH</forbiddenSides>
+                <forbiddenSides>EAST</forbiddenSides>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              </style>
+            </borderedNodeMappings>
+            <borderedNodeMappings name="outputAnchor" label="Transition/Action Output Anchor" semanticCandidatesExpression="var:self" domainClass="ArduinoGrafcet::TransitionAction">
+              <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="out" sizeComputationExpression="1" labelPosition="node" resizeKind="EAST_WEST">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <forbiddenSides>WEST</forbiddenSides>
+                <forbiddenSides>EAST</forbiddenSides>
+                <forbiddenSides>NORTH</forbiddenSides>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              </style>
+            </borderedNodeMappings>
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:self.transitionFct + '\n \n \n' + self.actionFct" tooltipExpression="aql:self.comment" sizeComputationExpression="25" labelPosition="node" workspacePath="/org.bpy.electronic.grafcet.design/icons/TransitionAction.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="transitionOnly" label="Transition only" semanticCandidatesExpression="[grafcetElements/]" doubleClickDescription="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@toolSections.2/@ownedTools[name='transitionAttributeEditor']" domainClass="ArduinoGrafcet::Transition">
+            <borderedNodeMappings name="transitionInputAnchor" label="Transition Input Anchor" preconditionExpression="aql:true" semanticCandidatesExpression="var:self" domainClass="ArduinoGrafcet::Transition">
+              <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="" sizeComputationExpression="" labelPosition="node" resizeKind="EAST_WEST" width="1" height="1">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <forbiddenSides>WEST</forbiddenSides>
+                <forbiddenSides>SOUTH</forbiddenSides>
+                <forbiddenSides>EAST</forbiddenSides>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              </style>
+            </borderedNodeMappings>
+            <borderedNodeMappings name="transitionOutputAnchor" label="Transition Output Anchor" semanticCandidatesExpression="aql:self" domainClass="ArduinoGrafcet::Transition">
+              <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="" sizeComputationExpression="" labelPosition="node" resizeKind="EAST_WEST" width="1" height="1">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <forbiddenSides>WEST</forbiddenSides>
+                <forbiddenSides>EAST</forbiddenSides>
+                <forbiddenSides>NORTH</forbiddenSides>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              </style>
+            </borderedNodeMappings>
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:self.transitionFct + '\n \n \n \n'" tooltipExpression="aql:self.comment" sizeComputationExpression="25" labelPosition="node" workspacePath="/org.bpy.electronic.grafcet.design/icons/Transition.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="actionOnly" label="Action only" semanticCandidatesExpression="[grafcetElements/]" doubleClickDescription="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@toolSections.2/@ownedTools[name='actionAttributeEditor']" domainClass="ArduinoGrafcet::Action">
+            <borderedNodeMappings name="actionInputAnchor" label="Action Input Anchor" semanticCandidatesExpression="var:self" domainClass="ArduinoGrafcet::Action">
+              <style xsi:type="style:SquareDescription" labelSize="12" sizeComputationExpression="" labelPosition="node" resizeKind="NORTH_SOUTH" width="1" height="1">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <forbiddenSides>WEST</forbiddenSides>
+                <forbiddenSides>SOUTH</forbiddenSides>
+                <forbiddenSides>EAST</forbiddenSides>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              </style>
+            </borderedNodeMappings>
+            <borderedNodeMappings name="actionOutputAnchor" label="Action Output Anchor" semanticCandidatesExpression="var:self" domainClass="ArduinoGrafcet::Action">
+              <style xsi:type="style:SquareDescription" labelSize="12" sizeComputationExpression="" labelPosition="node" resizeKind="NSEW" width="1" height="1">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <forbiddenSides>WEST</forbiddenSides>
+                <forbiddenSides>EAST</forbiddenSides>
+                <forbiddenSides>NORTH</forbiddenSides>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              </style>
+            </borderedNodeMappings>
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:'\n \n \n \n'+self.actionFct" sizeComputationExpression="25" labelPosition="node" workspacePath="/org.bpy.electronic.grafcet.design/icons/Action.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="passThrough" label="Pass Through" semanticCandidatesExpression="feature:eAllContents" doubleClickDescription="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@toolSections.2/@ownedTools[name='passThroughAttributeEditor']" domainClass="ArduinoGrafcet::PassThrough">
+            <borderedNodeMappings name="passThroughInputAnchor" label="Pass Through Input Anchor" semanticCandidatesExpression="var:self" domainClass="ArduinoGrafcet::PassThrough">
+              <style xsi:type="style:SquareDescription" labelSize="12" sizeComputationExpression="" labelPosition="node" width="1" height="1">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <forbiddenSides>WEST</forbiddenSides>
+                <forbiddenSides>SOUTH</forbiddenSides>
+                <forbiddenSides>EAST</forbiddenSides>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              </style>
+            </borderedNodeMappings>
+            <borderedNodeMappings name="passThroughOutputAnchor" label="Pass Through Output Anchor" semanticCandidatesExpression="var:self" domainClass="ArduinoGrafcet::PassThrough">
+              <style xsi:type="style:SquareDescription" labelSize="12" sizeComputationExpression="" labelPosition="node" width="1" height="1">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <forbiddenSides>WEST</forbiddenSides>
+                <forbiddenSides>EAST</forbiddenSides>
+                <forbiddenSides>NORTH</forbiddenSides>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              </style>
+            </borderedNodeMappings>
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" labelExpression="" sizeComputationExpression="25" labelPosition="node" workspacePath="/org.bpy.electronic.grafcet.design/icons/PassThrough.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" labelExpression="feature:comment" tooltipExpression="aql:self.description">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            <labelBorderStyle href="environment:/viewpoint#//@labelBorderStyles/@labelBorderStyleDescriptions.1"/>
+          </style>
+        </containerMappings>
+        <toolSections name="grafcetMenu" label="Menu">
+          <ownedTools xsi:type="tool:GroupMenu" name="stepMenu" label="Step Menu" locationURI="menu:root">
+            <itemDescriptions xsi:type="tool:OperationAction" name="editStepAttributes" label="Edit Step Attributes" precondition="aql:self.oclIsTypeOf(ArduinoGrafcet::GrafcetStep)">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:element">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:self.openStepAttributeEditor()"/>
+                </firstModelOperations>
+              </initialOperation>
+            </itemDescriptions>
+          </ownedTools>
+          <ownedTools xsi:type="tool:GroupMenu" name="transitionActionMenu" label="Transition/Action Menu" locationURI="menu:root">
+            <itemDescriptions xsi:type="tool:OperationAction" name="editTransitionActionAttributreMenu" label="Edit Transition/Action Attributre Menu" precondition="aql:self.oclIsTypeOf(ArduinoGrafcet::TransitionAction)">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:element">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:self.openTransitionActionAttributeEditor()"/>
+                </firstModelOperations>
+              </initialOperation>
+            </itemDescriptions>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="grafcetElements" label="Grafcet Elements">
+          <ownedTools xsi:type="tool_1:NodeCreationDescription" name="grafcetEntryPoint" label="Entry Point" nodeMappings="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@nodeMappings[name='entryGrafcetnode']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool:CreateInstance" typeName="ArduinoGrafcet::GrafcetEntryPoint" referenceName="entryPoint"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:ContainerCreationDescription" name="stepCreation" label="Step" containerMappings="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@containerMappings[name='stepContainer']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:self.createStepElement()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:NodeCreationDescription" name="actionTransitionCreation" label="Transition/Action" nodeMappings="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@containerMappings[name='stepContainer']/@subNodeMappings[name='transitionAction']" iconPath="/org.bpy.electronic.grafcet.design/icons/TransitionActionIcon.jpg">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:CreateInstance" typeName="ArduinoGrafcet::TransitionAction" referenceName="grafcetElements">
+                <subModelOperations xsi:type="tool:SetValue" featureName="actionFct" valueExpression="actionToDefine"/>
+                <subModelOperations xsi:type="tool:SetValue" featureName="transitionFct" valueExpression="transitionToDefine"/>
+                <subModelOperations xsi:type="tool_1:CreateView" mapping="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@containerMappings[name='stepContainer']/@subNodeMappings[name='transitionAction']" containerViewExpression="var:containerView"/>
+                <subModelOperations xsi:type="tool:SetValue" featureName="uuid" valueExpression="aql:self.getUUID()"/>
+                <subModelOperations xsi:type="tool:Let" variableName="dummy" valueExpression="service:containerView.centerBoderedNode()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:DeleteElementDescription" name="deleteStepConnector" label="Delete Step Connector" precondition="false">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation/>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:NodeCreationDescription" name="transitionOnly" label="Transition" nodeMappings="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@containerMappings[name='stepContainer']/@subNodeMappings[name='transitionOnly']" iconPath="/org.bpy.electronic.grafcet.design/icons/TransitionIcon.jpg">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:CreateInstance" typeName="ArduinoGrafcet::Transition" referenceName="grafcetElements">
+                <subModelOperations xsi:type="tool:SetValue" featureName="transitionFct" valueExpression="transitionToDefine"/>
+                <subModelOperations xsi:type="tool_1:CreateView" mapping="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@containerMappings[name='stepContainer']/@subNodeMappings[name='transitionOnly']" containerViewExpression="var:containerView"/>
+                <subModelOperations xsi:type="tool:SetValue" featureName="uuid" valueExpression="aql:self.getUUID()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:NodeCreationDescription" name="actionOnly" label="Action" nodeMappings="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@containerMappings[name='stepContainer']/@subNodeMappings[name='actionOnly']" iconPath="/org.bpy.electronic.grafcet.design/icons/ActionIcon.jpg">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:CreateInstance" typeName="ArduinoGrafcet::Action" referenceName="grafcetElements">
+                <subModelOperations xsi:type="tool:SetValue" featureName="actionFct" valueExpression="actionToDefine"/>
+                <subModelOperations xsi:type="tool_1:CreateView" mapping="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@containerMappings[name='stepContainer']/@subNodeMappings[name='actionOnly']" containerViewExpression="var:containerView"/>
+                <subModelOperations xsi:type="tool:SetValue" featureName="uuid" valueExpression="aql:self.getUUID()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:NodeCreationDescription" name="passThrough" label="Pass Through" nodeMappings="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@containerMappings[name='stepContainer']/@subNodeMappings[name='passThrough']" iconPath="/org.bpy.electronic.grafcet.design/icons/passThroughIcon.jpg">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:CreateInstance" typeName="ArduinoGrafcet::PassThrough" referenceName="grafcetElements">
+                <subModelOperations xsi:type="tool_1:CreateView" mapping="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@containerMappings[name='stepContainer']/@subNodeMappings[name='passThrough']" containerViewExpression="var:containerView"/>
+                <subModelOperations xsi:type="tool:SetValue" featureName="uuid" valueExpression="aql:self.getUUID()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:NodeCreationDescription" name="reportCreation" label="Report" nodeMappings="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@nodeMappings[name='reportElement']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool:CreateInstance" typeName="ArduinoGrafcet::Report" referenceName="reports"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="diagramTools" label="Diagram tools">
+          <ownedTools xsi:type="tool_1:DoubleClickDescription" name="stepDoubleClick" label="Step attributes edition" mappings="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@containerMappings[name='stepContainer']">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:self.openStepAttributeEditor()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:DoubleClickDescription" name="transitionActionAttributeEditor" label="Transition/Action attribute editor" mappings="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@containerMappings[name='stepContainer']/@subNodeMappings[name='transitionAction']">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool:Let" valueExpression="aql:self.openTransitionActionAttributeEditor()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:DoubleClickDescription" name="transitionAttributeEditor" label="Transition attribute editor" mappings="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@containerMappings[name='stepContainer']/@subNodeMappings[name='transitionOnly']">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool:Let" valueExpression="aql:self.openTransitionAttributeEditor()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:DoubleClickDescription" name="actionAttributeEditor" label="Action attribute editor" mappings="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@containerMappings[name='stepContainer']/@subNodeMappings[name='actionOnly']">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool:Let" valueExpression="aql:self.openActionAttributeEditor()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:DoubleClickDescription" name="passThroughAttributeEditor" label="Pass through attribute editor" mappings="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@containerMappings[name='stepContainer']/@subNodeMappings[name='passThrough']">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool:Let" valueExpression="aql:self.openPassThroughAttributeEditor()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:DoubleClickDescription" name="reportAttributeEditor" label="Report Attribute Editor" mappings="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@nodeMappings[name='reportElement']">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool:Let" valueExpression="aql:self.openReportAttributeEditor()"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="grafcetConnector" label="Grafcet connectors">
+          <ownedTools xsi:type="tool_1:EdgeCreationDescription" name="grafcetEdgeConnection" label="Connection" edgeMappings="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@edgeMappings[name='entryToStep'] //@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@edgeMappings[name='stepToTransitionAction'] //@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@edgeMappings[name='stepToAction'] //@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@edgeMappings[name='stepToTransition'] //@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@edgeMappings[name='stepToPassThrough'] //@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@edgeMappings[name='grafcetElementToStep'] //@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@edgeMappings[name='elementToReport'] //@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@edgeMappings[name='entryToReport']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="[source/]">
+                <subModelOperations xsi:type="tool:If" conditionExpression="aql:source.oclIsTypeOf(ArduinoGrafcet::GrafcetEntryPoint) and target.oclIsTypeOf(ArduinoGrafcet::GrafcetStep)">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="step" valueExpression="[target/]"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool:If" conditionExpression="aql:source.oclIsTypeOf(ArduinoGrafcet::GrafcetConnector) and target.oclIsTypeOf(ArduinoGrafcet::TransitionAction)">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="grafcetElements" valueExpression="[target/]"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool:If" conditionExpression="aql:source.oclIsTypeOf(ArduinoGrafcet::GrafcetConnector) and target.oclIsTypeOf(ArduinoGrafcet::Action)">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="grafcetElements" valueExpression="[target/]"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool:If" conditionExpression="aql:source.oclIsTypeOf(ArduinoGrafcet::GrafcetConnector) and target.oclIsTypeOf(ArduinoGrafcet::Transition)">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="grafcetElements" valueExpression="[target/]"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool:If" conditionExpression="aql:source.oclIsTypeOf(ArduinoGrafcet::GrafcetConnector) and target.oclIsTypeOf(ArduinoGrafcet::PassThrough)">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="grafcetElements" valueExpression="[target/]"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool:If" conditionExpression="aql:source.oclIsTypeOf(ArduinoGrafcet::TransitionAction) and target.oclIsTypeOf(ArduinoGrafcet::GrafcetStep)">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="nextStep" valueExpression="[target/]"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool:If" conditionExpression="aql:source.oclIsTypeOf(ArduinoGrafcet::Action) and target.oclIsTypeOf(ArduinoGrafcet::GrafcetStep)">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="nextStep" valueExpression="[target/]"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool:If" conditionExpression="aql:source.oclIsTypeOf(ArduinoGrafcet::Transition) and target.oclIsTypeOf(ArduinoGrafcet::GrafcetStep)">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="nextStep" valueExpression="[target/]"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool:If" conditionExpression="aql:source.oclIsTypeOf(ArduinoGrafcet::PassThrough) and target.oclIsTypeOf(ArduinoGrafcet::GrafcetStep)">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="nextStep" valueExpression="[target/]"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool:If" conditionExpression="aql:source.oclIsTypeOf(ArduinoGrafcet::TransitionAction) and target.oclIsTypeOf(ArduinoGrafcet::Report)">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="nextReportStep" valueExpression="[target/]"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool:If" conditionExpression="aql:source.oclIsTypeOf(ArduinoGrafcet::Action) and target.oclIsTypeOf(ArduinoGrafcet::Report)">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="nextReportStep" valueExpression="[target/]"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool:If" conditionExpression="aql:source.oclIsTypeOf(ArduinoGrafcet::PassThrough) and target.oclIsTypeOf(ArduinoGrafcet::Report)">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="nextReportStep" valueExpression="[target/]"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool:If" conditionExpression="aql:source.oclIsTypeOf(ArduinoGrafcet::Transition) and target.oclIsTypeOf(ArduinoGrafcet::Report)">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="nextReportStep" valueExpression="[target/]"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool:If" conditionExpression="aql:source.oclIsTypeOf(ArduinoGrafcet::GrafcetEntryPoint) and target.oclIsTypeOf(ArduinoGrafcet::Report)">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="report" valueExpression="[target/]"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="deleteElements" label="Delete">
+          <ownedTools xsi:type="tool_1:DeleteElementDescription" name="deleteEdge" label="Delete Edge">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool:Unset" featureName="nextStep"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:DeleteElementDescription" name="deleteEdgeElementToReport" label="Delete Edge Element To Report">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool:Unset" featureName="nextReportStep"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:DeleteElementDescription" name="entryToStep" label="Entry To Step">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool:Unset" featureName="step"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:DeleteElementDescription" name="deleteStepEntryToElements" label="Delete StepEntry To Elements">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.sourceNode.oclAsType(GrafcetConnector)">
+                <subModelOperations xsi:type="tool:Let" valueExpression="service:element.removeTransitionAction(elementView)"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:DeleteElementDescription" name="deleteEntryPointToReport" label="Delete entry point to report">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool:Unset" featureName="report"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="org.bpy.electronic.grafcet.design.validation.MainSequencerValidation"/>
+    <ownedJavaExtensions qualifiedClassName="org.bpy.electronic.grafcet.design.validation.EdgeValidation"/>
+    <ownedJavaExtensions qualifiedClassName="org.bpy.electronic.grafcet.design.services.GrafcetDiagramService"/>
+    <ownedJavaExtensions qualifiedClassName="org.bpy.electronic.grafcet.design.services.HeaderDiagramService"/>
+  </ownedViewpoints>
+</description:Group>

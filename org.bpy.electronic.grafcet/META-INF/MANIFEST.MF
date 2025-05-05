@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.bpy.electronic.grafcet;singleton:=true
+Automatic-Module-Name: org.bpy.electronic.grafcet
+Bundle-Version: 0.1.0.qualifier
+Bundle-ClassPath: .
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Export-Package: org.bpy.electronic.ArduinoGrafcet,
+ org.bpy.electronic.ArduinoGrafcet.impl,
+ org.bpy.electronic.ArduinoGrafcet.util
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport
+Bundle-ActivationPolicy: lazy
