@@ -269,7 +269,7 @@
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_purple']"/>
           </style>
         </nodeMappings>
-        <edgeMappings name="entryToStep" label="Entry to step" deletionDescription="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@toolSections.4/@ownedTools[name='entryToStep']" sourceMapping="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@nodeMappings[name='entryGrafcetnode']" targetMapping="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@containerMappings[name='stepContainer']" targetFinderExpression="[step/]">
+        <edgeMappings name="entryToStep" label="Entry to step" deletionDescription="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@toolSections.4/@ownedTools[name='entryToStep']" sourceMapping="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@nodeMappings[name='entryGrafcetnode']" targetMapping="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@containerMappings[name='stepContainer']" targetFinderExpression="[step/]" reconnections="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@toolSections.3/@ownedTools[name='reconnectEntryPointTarget']">
           <style targetArrow="InputFillClosedArrow" sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription labelSize="12">
@@ -311,7 +311,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="grafcetElementToStep" label="Grafcet Element To Step" deletionDescription="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@toolSections.4/@ownedTools[name='deleteEdge']" sourceMapping="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@containerMappings[name='stepContainer']/@subNodeMappings[name='transitionAction']/@borderedNodeMappings[name='outputAnchor'] //@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@containerMappings[name='stepContainer']/@subNodeMappings[name='transitionOnly']/@borderedNodeMappings[name='transitionOutputAnchor'] //@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@containerMappings[name='stepContainer']/@subNodeMappings[name='actionOnly']/@borderedNodeMappings[name='actionOutputAnchor'] //@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@containerMappings[name='stepContainer']/@subNodeMappings[name='passThrough']/@borderedNodeMappings[name='passThroughOutputAnchor']" targetMapping="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@containerMappings[name='stepContainer']" targetFinderExpression="[nextStep/]">
+        <edgeMappings name="grafcetElementToStep" label="Grafcet Element To Step" deletionDescription="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@toolSections.4/@ownedTools[name='deleteEdge']" sourceMapping="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@containerMappings[name='stepContainer']/@subNodeMappings[name='transitionAction']/@borderedNodeMappings[name='outputAnchor'] //@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@containerMappings[name='stepContainer']/@subNodeMappings[name='transitionOnly']/@borderedNodeMappings[name='transitionOutputAnchor'] //@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@containerMappings[name='stepContainer']/@subNodeMappings[name='actionOnly']/@borderedNodeMappings[name='actionOutputAnchor'] //@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@containerMappings[name='stepContainer']/@subNodeMappings[name='passThrough']/@borderedNodeMappings[name='passThroughOutputAnchor']" targetMapping="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@containerMappings[name='stepContainer']" targetFinderExpression="[nextStep/]" reconnections="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@toolSections.3/@ownedTools[name='reconnectGrafcetElementTarget']">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription labelSize="12">
@@ -319,7 +319,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="elementToReport" label="Grafcet Element To Report" deletionDescription="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@toolSections.4/@ownedTools[name='deleteEdgeElementToReport']" sourceMapping="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@containerMappings[name='stepContainer']/@subNodeMappings[name='transitionOnly']/@borderedNodeMappings[name='transitionOutputAnchor'] //@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@containerMappings[name='stepContainer']/@subNodeMappings[name='transitionAction']/@borderedNodeMappings[name='outputAnchor'] //@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@containerMappings[name='stepContainer']/@subNodeMappings[name='actionOnly']/@borderedNodeMappings[name='actionOutputAnchor'] //@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@containerMappings[name='stepContainer']/@subNodeMappings[name='passThrough']/@borderedNodeMappings[name='passThroughOutputAnchor']" targetMapping="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@nodeMappings[name='reportElement']" targetFinderExpression="[nextReportStep/]">
+        <edgeMappings name="elementToReport" label="Grafcet Element To Report" deletionDescription="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@toolSections.4/@ownedTools[name='deleteEdgeElementToReport']" sourceMapping="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@containerMappings[name='stepContainer']/@subNodeMappings[name='transitionOnly']/@borderedNodeMappings[name='transitionOutputAnchor'] //@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@containerMappings[name='stepContainer']/@subNodeMappings[name='transitionAction']/@borderedNodeMappings[name='outputAnchor'] //@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@containerMappings[name='stepContainer']/@subNodeMappings[name='actionOnly']/@borderedNodeMappings[name='actionOutputAnchor'] //@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@containerMappings[name='stepContainer']/@subNodeMappings[name='passThrough']/@borderedNodeMappings[name='passThroughOutputAnchor']" targetMapping="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@nodeMappings[name='reportElement']" targetFinderExpression="[nextReportStep/]" reconnections="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@toolSections.3/@ownedTools[name='reconnectGrafcetElementTarget']">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription labelSize="12">
@@ -327,7 +327,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="entryToReport" label="Entry To Report" deletionDescription="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@toolSections.4/@ownedTools[name='deleteEntryPointToReport']" sourceMapping="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@nodeMappings[name='entryGrafcetnode']" targetMapping="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@nodeMappings[name='reportElement']" targetFinderExpression="[report/]">
+        <edgeMappings name="entryToReport" label="Entry To Report" deletionDescription="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@toolSections.4/@ownedTools[name='deleteEntryPointToReport']" sourceMapping="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@nodeMappings[name='entryGrafcetnode']" targetMapping="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@nodeMappings[name='reportElement']" targetFinderExpression="[report/]" reconnections="//@ownedViewpoints[name='model_vp']/@ownedRepresentations[name='grafcetDiagram']/@defaultLayer/@toolSections.3/@ownedTools[name='reconnectEntryPointTarget']">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription labelSize="12">
@@ -667,6 +667,46 @@
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:ReconnectEdgeDescription" name="reconnectEntryPointTarget" label="Reconnect Entry Point Target">
+            <source name="source"/>
+            <target name="target"/>
+            <sourceView name="sourceView"/>
+            <targetView name="targetView"/>
+            <element name="element"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool:If" conditionExpression="aql:target.oclIsTypeOf(ArduinoGrafcet::GrafcetStep)">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="step" valueExpression="aql:target"/>
+                  <subModelOperations xsi:type="tool:SetValue" featureName="report" valueExpression="aql:null"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool:If" conditionExpression="aql:target.oclIsTypeOf(ArduinoGrafcet::Report)">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="report" valueExpression="aql:target"/>
+                  <subModelOperations xsi:type="tool:SetValue" featureName="step" valueExpression="aql:null"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+            <edgeView name="edgeView"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:ReconnectEdgeDescription" name="reconnectGrafcetElementTarget" label="Reconnect Grafcet Element Target">
+            <source name="source"/>
+            <target name="target"/>
+            <sourceView name="sourceView"/>
+            <targetView name="targetView"/>
+            <element name="element"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool:If" conditionExpression="aql:target.oclIsTypeOf(ArduinoGrafcet::GrafcetStep)">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="nextStep" valueExpression="aql:target"/>
+                  <subModelOperations xsi:type="tool:SetValue" featureName="nextReportStep" valueExpression="aql:null"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool:If" conditionExpression="aql:target.oclIsTypeOf(ArduinoGrafcet::Report)">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="nextReportStep" valueExpression="aql:target"/>
+                  <subModelOperations xsi:type="tool:SetValue" featureName="nextStep" valueExpression="aql:null"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+            <edgeView name="edgeView"/>
           </ownedTools>
         </toolSections>
         <toolSections name="deleteElements" label="Delete">
